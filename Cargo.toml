@@ -1,0 +1,20 @@
+[package]
+name = "product_service"
+version = "0.1.0"
+edition = "2021"
+
+[workspace]
+members = [".", "entity", "migration"]
+
+[dependencies]
+axum = { version = "0.7.9", features = ["macros"] }
+chrono = "0.4.39"
+sea-orm = { version = "1.1.0", features = [ "sqlx-postgres", "runtime-tokio-rustls", "macros" ] }
+tokio = { version = "1.42.0", features = ["full"] }
+uuid = { version = "1.11.0", features = ["v4"] }
+entity = { path = "entity" }
+migration = { path = "migration" }
+serde = "1.0.215"
+serde_json = "1.0"
+dotenv = "0.15.0"
+tower-http = { version = "0.6.2", features = ["cors"] }
