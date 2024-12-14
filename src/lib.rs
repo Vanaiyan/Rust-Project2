@@ -1,6 +1,8 @@
 mod routes;
 mod models;
 mod handlers;
+pub mod service;
+pub mod repository;
 
 use axum::{Extension, Router};
 use sea_orm::Database;

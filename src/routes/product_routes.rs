@@ -1,5 +1,11 @@
 
-use crate::handlers::product_hanlers::{create_product, get_all_products, get_product_by_uuid, delete_product, update_product};
+use crate::handlers::product_hanlers::{
+    create_product, 
+    get_all_products, 
+    get_product_by_uuid, 
+    delete_product, 
+    update_product};
+    
 use axum::{routing::{delete, get, post, put}, Router};
 
 pub fn product_routes() -> Router {
