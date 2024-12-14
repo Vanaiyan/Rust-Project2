@@ -19,6 +19,6 @@ pub async fn app() {
         .merge(routes::product_routes::product_routes())
         .layer(Extension(db));
 
-    let tcp_listener = tokio::net::TcpListener::bind("0.0.0.0:3001").await.unwrap();
+    let tcp_listener = tokio::net::TcpListener::bind("0.0.0.0:3002").await.unwrap();
     axum::serve(tcp_listener, app).await.unwrap();
 }
