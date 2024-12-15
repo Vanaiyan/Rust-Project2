@@ -1,0 +1,31 @@
+# Rust-specific ignores
+/target
+**/*.rs.bk
+
+# # Environment files
+# .env
+# *.env
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Dependency directories
+node_modules/
+
+# Backup files
+*.bak
+*.orig
+
+# Logs
+*.log
+
+# Git-related files
+.git
+.gitignore
