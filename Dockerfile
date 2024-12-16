@@ -1,5 +1,5 @@
 # Use an official Rust image as a builder
-FROM rust:1.82 as builder
+FROM rust:1.82 AS builder
 
 WORKDIR /app
 
@@ -27,10 +27,11 @@ COPY --from=builder /app/target/release/product_service /usr/local/bin/product_s
 COPY .env /app/
 
 # Set environment variable for database connection
-ENV DATABASE_URL="postgres://postgres:V.Abinajan30@host.docker.internal:5432/product_item_service"
+ENV DATABASE_URL="postgres://postgres:V.Abinajan30@34.55.1.248:5432/postgres"
+ENV PORT=8080
 
 # Expose the port your application listens on (adjust if different)
-EXPOSE 3002
+EXPOSE ${PORT}
 
-# Set the startup command
+# Set the startup command using JSON syntax
 CMD ["/usr/local/bin/product_service"]

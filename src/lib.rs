@@ -21,6 +21,11 @@ pub async fn app() {
         .merge(routes::product_routes::product_routes())
         .layer(Extension(db));
 
-    let tcp_listener = tokio::net::TcpListener::bind("0.0.0.0:3002").await.unwrap();
+    // Use PORT environment variable, default to 3002 if not set
+    let port = env::var("PORT").unwrap_or_else(|_| "8080".to_string());
+    let addr = format!("0.0.0.0:{}", port);
+    
+    let tcp_listener = tokio::net::TcpListener::bind(&addr).await.unwrap();
+    println!("Server listening on {}", addr);
     axum::serve(tcp_listener, app).await.unwrap();
 }
