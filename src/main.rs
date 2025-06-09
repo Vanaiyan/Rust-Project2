@@ -4,4 +4,5 @@ use product_service::app;
 async fn main() {
 
     app().await;
+    
 }
